@@ -1,0 +1,16 @@
+# Render Blueprint for job-scout (MCP server over SSE).
+# Deploy: push this repo to GitHub, then in Render: New > Blueprint, pick the repo.
+# Render injects PORT automatically; the server binds 0.0.0.0:$PORT.
+# Connect Claude to:  https://<your-service>.onrender.com/sse
+services:
+  - type: web
+    name: job-scout
+    runtime: python
+    plan: free
+    buildCommand: "pip install -e ."
+    startCommand: "python -m job_scout.server"
+    envVars:
+      - key: MCP_TRANSPORT
+        value: sse
+      - key: PYTHON_VERSION
+        value: "3.12"

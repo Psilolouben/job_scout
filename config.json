@@ -1,0 +1,23 @@
+{
+  "buckets": {
+    "em": ["engineering manager", "eng manager", "engineering lead", "software development manager", "development manager", "head of engineering", "director of engineering", "tech lead manager", "team lead", "engineering team lead"],
+    "ai": ["forward deployed", "forward-deployed", "solutions engineer", "solutions architect", "ai engineer", "applied ai", "ai deployment", "deployment engineer", "ai solutions", "machine learning engineer"]
+  },
+  "location_eligible_tokens": ["worldwide", "anywhere", "global", "europe", "emea", "eea", "european union", "greece", "athens"],
+  "location_excluded_tokens": ["united states", "usa", "u.s.", "us only", "us-based", "us-remote", "americas", "latin america", "latam", "apac", "asia-pacific", "canada", "united kingdom", "uk only", "britain", "germany", "france", "spain", "netherlands", "poland", "portugal", "ireland", "italy", "nordics", "dach", "benelux", "india", "brazil", "mexico", "argentina", "australia", "new zealand", "singapore", "philippines"],
+  "stack_hints": {
+    "rails": ["ruby on rails", "rails", " ruby"],
+    "dotnet": [".net", "c#", "asp.net", "dotnet"],
+    "go": ["golang", "go,", "go "],
+    "ai/mcp": ["mcp", " llm", "rag", "agentic", "genai", "openai", "claude", "langchain"]
+  },
+  "salary_floor_eur": null,
+  "greenhouse_companies": [],
+  "lever_companies": [],
+  "sources": {
+    "remotive": true,
+    "remoteok": true,
+    "arbeitnow": true,
+    "weworkremotely": true
+  }
+}
