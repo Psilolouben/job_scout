@@ -125,7 +125,11 @@ async def fetch_weworkremotely(client: httpx.AsyncClient) -> list[dict]:
         for item in root.iter("item"):
             title = item.findtext("title") or ""
             company, _, role = title.partition(":")  # WWR titles are "Company: Role"
-            region = item.findtext("region") or "Remote"
+            # WWR puts a broad <region> ("Anywhere in the World") alongside a
+            # <country> that holds the real restriction (e.g. UK-only). When a
+            # country is given it wins; otherwise fall back to the region.
+            country = (item.findtext("country") or "").strip()
+            region = country or item.findtext("region") or "Remote"
             out.append(
                 _norm(
                     "weworkremotely",
